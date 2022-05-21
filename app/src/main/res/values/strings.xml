@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GoogleTranslate</string>
+    <string name="str_save">Save</string>
+    <string name="str_enter_text">Enter text</string>
+    <string name="str_uzbek">O`zbek</string>
+    <string name="str_english">Ingliz</string>
+    <string name="str_new_translation">New translation</string>
+    <string name="str_translate_from">Translate from</string>
+    <string name="str_uzbek_to_english">O`zbek to Ingliz</string>
+    <string name="str_history">History</string>
+</resources>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/background_color">
+
+            <LinearLayout
+                android:id="@+id/ll_not_click_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_color"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_history" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="30dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/ll_click_state"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:src="@drawable/ic_back" />
+
+                <Button
+                    android:id="@+id/b_saved"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/ll_rounded_background"
+                    android:text="@string/str_save"
+                    android:textColor="@color/black"
+                    app:backgroundTint="@null"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"/>
+
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:paddingHorizontal="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        
+        <TextView
+            android:id="@+id/tv_enter_typeL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:text="@string/str_uzbek"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+        
+        <EditText
+            android:id="@+id/edt_enter_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_enter_typeL" 
+            android:background="@color/background_color"
+            android:layout_marginTop="25dp"
+            android:inputType="textMultiLine"
+            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:hint="@string/str_enter_text"/>
+        
+        <LinearLayout
+            android:id="@+id/ll_line"
+            android:layout_width="130dp"
+            android:layout_height="2dp"
+            app:layout_constraintTop_toBottomOf="@id/edt_enter_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginVertical="20dp"
+            android:orientation="horizontal"
+            android:background="@color/button_color"/>
+        
+        <TextView
+            android:id="@+id/tv_result_typeL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_line"
+            android:textSize="18sp"
+            android:text="@string/str_english"
+            android:visibility="gone"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+        
+        <TextView
+            android:id="@+id/tv_result_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_result_typeL"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="22dp"
+            android:textSize="22sp"
+            android:textColor="@color/text_color"/>
+
+        <LinearLayout
+            android:id="@+id/ll_note_fromL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/ll_replace"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="@string/str_translate_from"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="16sp"
+                android:text="@string/str_uzbek_to_english"/>
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/ll_replace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            android:visibility="visible"
+            android:gravity="center_vertical">
+            
+            <TextView
+                android:id="@+id/b_from"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/ll_rounded_background"
+                app:backgroundTint="@null"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="@string/str_uzbek"
+                android:textAllCaps="false"/>
+            
+            <ImageView
+                android:id="@+id/iv_replace"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:src="@drawable/ic_exchange"/>
+
+            <TextView
+                android:id="@+id/b_to"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/ll_rounded_background"
+                app:backgroundTint="@null"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="@string/str_english"
+                android:textAllCaps="false"/>
+
+            
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_new_translation"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_gravity="end|center_vertical"
+            android:background="@drawable/ll_rounded_background"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="30dp"
+            android:paddingHorizontal="12dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_add" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/str_new_translation"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
