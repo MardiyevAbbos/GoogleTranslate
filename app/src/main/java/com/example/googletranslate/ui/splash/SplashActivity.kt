@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
 
     private lateinit var topAnim: Animation
     private lateinit var bottomAnim: Animation
-    private val SPLASH_SCREEN = 5000
+    private val SPLASH_SCREEN = 2400
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.googletranslate.R
 import com.example.googletranslate.adapter.helper.ItemTouchHelperAdapter
@@ -67,6 +68,7 @@ class HistoryAdapter(var context: HistoryActivity) : RecyclerView.Adapter<Recycl
         context.viewModel.removeItem(items[position])
         items.removeAt(position)
         notifyItemRemoved(position)
+        Toast.makeText(context, "This Translation has been successfully deleted!", Toast.LENGTH_SHORT).show()
     }
 
 
