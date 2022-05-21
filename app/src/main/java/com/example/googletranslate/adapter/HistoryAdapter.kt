@@ -18,7 +18,7 @@ class HistoryAdapter(var context: HistoryActivity) : RecyclerView.Adapter<Recycl
 
     var items: ArrayList<SaveTranslate> = ArrayList()
 
-    inner class HistoryViewHolder(var view: View): RecyclerView.ViewHolder(view){
+    inner class HistoryViewHolder(view: View): RecyclerView.ViewHolder(view){
         var ll_item_click: LinearLayout
         var tv_from_text: TextView
         var tv_to_text: TextView

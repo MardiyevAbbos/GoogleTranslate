@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
                     is UiStateObject.SUCCESS -> {
                         it.data.data.detections.forEach { a ->
                             a.forEach { result ->
-                                if(result.language == "uz" || result.isReliable){
+                                if(result.language == "uz" || result.isReliable || result.confidence > 0.5){
                                     viewModel.wordTranslate(binding.edtEnterText.text.toString(), "en", "uz")
                                 }else{
                                     Toast.makeText(applicationContext, "You enter only O`zbek text!!!", Toast.LENGTH_SHORT).show()

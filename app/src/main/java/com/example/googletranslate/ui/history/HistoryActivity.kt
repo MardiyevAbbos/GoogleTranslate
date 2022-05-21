@@ -54,11 +54,13 @@ class HistoryActivity : AppCompatActivity() {
                 when(it){
                     is UiStateList.LOADING -> {}
                     is UiStateList.SUCCESS -> {
-                        val items = it.data as ArrayList<SaveTranslate>
-                        adapter.items = items.reversed() as ArrayList<SaveTranslate>
+                        val items = it.data
+                        adapter.items.clear()
+                        adapter.items.addAll(items.reversed())
                     }
                     is UiStateList.ERROR -> {
-                        Log.d(TAG, it.message) }
+                        Log.d(TAG, it.message)
+                    }
                     else -> Unit
                 }
             }
